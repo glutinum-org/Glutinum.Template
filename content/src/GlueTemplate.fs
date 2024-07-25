@@ -1,4 +1,4 @@
-module Glutinum.GlueTemplate.Exports
+module GlueTemplate.Exports
 
 // Put your exports here
 
