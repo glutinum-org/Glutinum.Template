@@ -1,0 +1,10 @@
+<Project>
+    <!-- User configuration -->
+    <PropertyGroup>
+        <FablePackageType></FablePackageType>
+        <!-- Glutinum bindings are for JavaScript so setting it by default -->
+        <PackageTags>fable-javascript</PackageTags>
+        <PackageProjectUrl></PackageProjectUrl>
+        <Authors></Authors>
+    </PropertyGroup>
+</Project>
