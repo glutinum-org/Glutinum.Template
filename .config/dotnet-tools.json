@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "fantomas": {
+      "version": "6.3.10",
+      "commands": [
+        "fantomas"
+      ],
+      "rollForward": false
+    },
+    "fable": {
+      "version": "4.19.3",
+      "commands": [
+        "fable"
+      ],
+      "rollForward": false
+    },
+    "husky": {
+      "version": "0.6.4",
+      "commands": [
+        "husky"
+      ],
+      "rollForward": false
+    },
+    "easybuild.commitlinter": {
+      "version": "0.1.0",
+      "commands": [
+        "commit-linter"
+      ],
+      "rollForward": false
+    }
+  }
+}
