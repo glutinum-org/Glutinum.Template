@@ -1,4 +1,4 @@
-# GlueTemplate
+# Glutinum.Template
 
 <!-- To learn how to use the template please refer to MANUAL.md -->
 

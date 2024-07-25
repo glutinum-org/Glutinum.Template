@@ -1,5 +1,7 @@
 # Manual for the template
 
+If you are looking for documentation about the project, you should refer to the [README.md](./README.md) file.
+
 ## Architecture
 
 - `src/` contains the source code of your binding

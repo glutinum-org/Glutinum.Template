@@ -1,0 +1,91 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Maxime Mangel",
+    "classifications": [
+        "Fable",
+        "Binding",
+        "Glutinum"
+    ],
+    "name": "Glutinum binding template for Fable",
+    "tags": {
+        "language": "F#",
+        "type": "project"
+    },
+    "identity": "Fable.Template.Glutinum",
+    "groupIdentity": "Fable.Template.Glutinum",
+    "shortName": "glutinum-template",
+    "sourceName": "GlueTemplate",
+    // This allows using the `-n` option to create a new directory
+    "preferNameDirectory": true,
+    "postActions": [
+        {
+            "description": "Setup Git for Unix",
+            "condition": "(OS != \"Windows_NT\")",
+            "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+            "args": {
+                "executable": "git",
+                "args": "init",
+                "redirectStandardOutput": false,
+                "redirectStandardError": false
+            },
+            "manualInstructions": [
+                {
+                    "text": "Initialize a git repository by running 'git init'"
+                }
+            ]
+        },
+        {
+            "description": "Make scripts executable",
+            "condition": "(OS != \"Windows_NT\")",
+            "manualInstructions": [{ "text": "Run 'chmod +x *.sh'" }],
+            "actionId": "CB9A6CF3-4F5C-4860-B9D2-03A574959774",
+            "args": {
+                "+x": "*.sh"
+            },
+            "continueOnError": true
+        },
+        {
+            "description": "Setup the hooks for Unix",
+            "condition": "(OS != \"Windows_NT\")",
+            "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+            "args": {
+                "executable": "./build.sh",
+                "redirectStandardOutput": false,
+                "redirectStandardError": false
+            },
+            "manualInstructions": [
+                {
+                    "text": "Setup the hooks by running './build.sh'"
+                }
+            ]
+        },
+        {
+            "description": "Setup Git for Windows",
+            "condition": "(OS == \"Windows_NT\")",
+            "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+            "manualInstructions": [
+                {
+                    "text": "Initialize a git repository by running 'git init'"
+                },
+                {
+                    "text": "Setup the hooks by running './build.cmd'"
+                }
+            ]
+        },
+        {
+            "description": "Setup the hooks for Windows",
+            "condition": "(OS == \"Windows_NT\")",
+            "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+            "args": {
+                "executable": "./build.cmd",
+                "redirectStandardOutput": false,
+                "redirectStandardError": false
+            },
+            "manualInstructions": [
+                {
+                    "text": "Setup the hooks by running './build.cmd'"
+                }
+            ]
+        }
+    ]
+}

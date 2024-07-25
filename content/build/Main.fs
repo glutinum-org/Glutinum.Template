@@ -5,6 +5,7 @@ open EasyBuild.Commands.Demo
 open EasyBuild.Commands.Release
 open EasyBuild.Commands.Publish
 open SimpleExec
+open System.Runtime.InteropServices
 
 [<EntryPoint>]
 let main args =
@@ -14,7 +15,10 @@ let main args =
     let app = CommandApp()
 
     app.Configure(fun config ->
-        config.Settings.ApplicationName <- "./build.sh"
+        if RuntimeInformation.IsOSPlatform(OSPlatform.Windows) then
+            config.Settings.ApplicationName <- "./build.cmd"
+        else
+            config.Settings.ApplicationName <- "./build.sh"
 
         config
             .AddCommand<DemoCommand>("demo")

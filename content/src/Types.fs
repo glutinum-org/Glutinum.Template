@@ -1,4 +1,4 @@
-module Glutinum.GlueTemplate.Types
+module GlueTemplate.Types
 
 // Put your types here
 
