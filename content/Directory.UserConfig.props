@@ -1,9 +1,15 @@
 <Project>
     <!-- User configuration -->
     <PropertyGroup>
+        <!--
+            Learn more about FablePackageType and PackageTags
+            at https://github.com/fable-compiler/Fable.Package.SDK
+        -->
         <FablePackageType></FablePackageType>
         <PackageTags></PackageTags>
+        <!-- Example of PackageProjectUrl: https://github.com/fable-compiler/Fable.Package.SDK -->
         <PackageProjectUrl></PackageProjectUrl>
+        <!-- Example of Authors: Mangel Maxime -->
         <Authors></Authors>
     </PropertyGroup>
 </Project>
