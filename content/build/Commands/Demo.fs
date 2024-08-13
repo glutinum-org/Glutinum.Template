@@ -17,6 +17,8 @@ type DemoCommand() =
 
     override __.Execute(context, settings) =
 
+        Command.Run("pnpm", "install", workingDirectory = Workspace.``.``)
+
         if settings.IsWatch then
             Async.Parallel
                 [

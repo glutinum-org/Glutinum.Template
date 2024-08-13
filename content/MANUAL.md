@@ -49,10 +49,13 @@ To run the demo, you can use the following command:
 
 ## Make a release
 
-You need to have a NuGet API saved in `NUGET_KEY` environment variable.
+You need to have a NuGet API saved in `NUGET_KEY` environment variable, you can get it from https://www.nuget.org/account/apikeys.
 
 To make a release, you can use the following command:
 
 ```bash
 ./build.sh release
+
+# Check the help for more information
+./build.sh release --help
 ```
