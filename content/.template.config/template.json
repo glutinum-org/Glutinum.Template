@@ -13,7 +13,7 @@
     },
     "identity": "Fable.Template.Glutinum",
     "groupIdentity": "Fable.Template.Glutinum",
-    "shortName": "glutinum-template",
+    "shortName": "glutinum",
     "sourceName": "GlueTemplate",
     // This allows using the `-n` option to create a new directory
     "preferNameDirectory": true,
