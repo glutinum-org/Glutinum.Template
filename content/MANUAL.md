@@ -49,6 +49,8 @@ To run the demo, you can use the following command:
 
 ## Make a release
 
+You need to have a NuGet API saved in `NUGET_KEY` environment variable.
+
 To make a release, you can use the following command:
 
 ```bash

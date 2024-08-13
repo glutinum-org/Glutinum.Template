@@ -10,8 +10,7 @@ open System
 open System.IO
 open BlackFox.CommandLine
 open EasyBuild.Utils.Dotnet
-open EasyBuild.Commands.Demo
-open EasyBuild.Commands.Publish
+open Semver
 
 type Type =
     | Feat
@@ -101,6 +100,9 @@ type ReleaseSettings() =
     [<CommandOption("--patch")>]
     member val BumpPatch = false with get, set
 
+    [<CommandOption("--force-version")>]
+    member val ForceVersion = None with get, set
+
 type ReleaseCommand() =
     inherit Command<ReleaseSettings>()
     interface ICommandLimiter<ReleaseSettings>
@@ -116,8 +118,8 @@ type ReleaseCommand() =
         if repository.Head.FriendlyName <> "main" then
             failwith "You must be on the main branch to publish"
 
-        if repository.RetrieveStatus().IsDirty then
-            failwith "You have uncommitted changes"
+        // if repository.RetrieveStatus().IsDirty then
+        //     failwith "You have uncommitted changes"
 
         let changelogContent =
             File.ReadAllText(Workspace.``CHANGELOG.md``).Replace("\r\n", "\n").Split('\n')
@@ -175,8 +177,6 @@ type ReleaseCommand() =
             0
         else
 
-            DemoCommand().Execute(context, DemoSettings()) |> ignore
-
             let lastChangelogVersion = Changelog.tryGetLastVersion Workspace.``CHANGELOG.md``
 
             // Should user bump version take priority over commits infered version bump?
@@ -197,17 +197,20 @@ type ReleaseCommand() =
             let refVersion =
                 match lastChangelogVersion with
                 | Some version -> version.Version
-                | None -> Semver.SemVersion(0, 0, 0)
+                | None -> SemVersion(0, 0, 0)
 
             let newVersion =
-                if shouldBumpMajor then
-                    refVersion.WithMajor(refVersion.Major + 1).WithMinor(0).WithPatch(0)
-                elif shouldBumpMinor then
-                    refVersion.WithMinor(refVersion.Minor + 1).WithPatch(0)
-                elif shouldBumpPatch then
-                    refVersion.WithPatch(refVersion.Patch + 1)
-                else
-                    failwith "No version bump required"
+                match settings.ForceVersion with
+                | Some forcedVersion -> SemVersion.Parse(forcedVersion, SemVersionStyles.Strict)
+                | None ->
+                    if shouldBumpMajor then
+                        refVersion.WithMajor(refVersion.Major + 1).WithMinor(0).WithPatch(0)
+                    elif shouldBumpMinor then
+                        refVersion.WithMinor(refVersion.Minor + 1).WithPatch(0)
+                    elif shouldBumpPatch then
+                        refVersion.WithPatch(refVersion.Patch + 1)
+                    else
+                        failwith "No version bump required"
 
             let newVersionLines = ResizeArray()
 
@@ -310,7 +313,7 @@ type ReleaseCommand() =
                     "dotnet",
                     CmdLine.empty
                     |> CmdLine.appendRaw "pack"
-                    |> CmdLine.appendRaw Workspace.src.``GlueTemplate.fsproj``
+                    |> CmdLine.appendRaw Workspace.``Glutinum.Template.proj``
                     |> CmdLine.appendRaw "-c Release"
                     |> CmdLine.appendRaw $"-p:PackageVersion=\"%s{newVersion.ToString()}\""
                     |> CmdLine.appendRaw
@@ -326,31 +329,29 @@ type ReleaseCommand() =
                     "Successfully created package '(?'nupkgPath'.*\.nupkg)'"
                 )
 
-            if not m.Success then
-                failwith $"Failed to find nupkg path in output:\n{standardOutput}"
+            // if not m.Success then
+            //     failwith $"Failed to find nupkg path in output:\n{standardOutput}"
 
-            let nugetKey = Environment.GetEnvironmentVariable("NUGET_KEY")
+            // let nugetKey = Environment.GetEnvironmentVariable("NUGET_KEY")
 
-            if nugetKey = null then
-                failwith "Please set the NUGET_KEY environment variable, you can get it from https://www.nuget.org/account/apikeys"
+            // if nugetKey = null then
+            //     failwith "Please set the NUGET_KEY environment variable, you can get it from https://www.nuget.org/account/apikeys"
 
-            Nuget.push (
-                m.Groups.["nupkgPath"].Value,
-                nugetKey
-            )
+            // Nuget.push (
+            //     m.Groups.["nupkgPath"].Value,
+            //     nugetKey
+            // )
 
-            Command.Run("git", "add .")
+            // Command.Run("git", "add .")
 
-            Command.Run(
-                "git",
-                CmdLine.empty
-                |> CmdLine.appendRaw "commit"
-                |> CmdLine.appendPrefix "-m" $"chore: release {newVersion.ToString()}"
-                |> CmdLine.toString
-            )
+            // Command.Run(
+            //     "git",
+            //     CmdLine.empty
+            //     |> CmdLine.appendRaw "commit"
+            //     |> CmdLine.appendPrefix "-m" $"chore: release {newVersion.ToString()}"
+            //     |> CmdLine.toString
+            // )
 
-            Command.Run("git", "push")
-
-            PublishCommand().Execute(context, PublishSettings(SkipBuild = true)) |> ignore
+            // Command.Run("git", "push")
 
             0

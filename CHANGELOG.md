@@ -7,7 +7,4 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 <!-- EasyBuild: START -->
 <!-- EasyBuild: END -->
 
-<!--
-    Don't add your changes manually,
-    it will be done based on your Git history when making a release
--->
+<!-- Don't add your changes manually, it will be done based on your Git history when making a release -->
