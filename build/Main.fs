@@ -19,7 +19,7 @@ let main args =
         config
             .AddCommand<ReleaseCommand>("release")
             .WithDescription(
-                "Package a new version of the library and publish it to NuGet. This also updates the demo."
+                "Package a new version of the template and publish it to NuGet."
             )
         |> ignore
 
