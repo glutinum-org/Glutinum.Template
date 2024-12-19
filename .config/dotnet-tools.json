@@ -2,17 +2,10 @@
   "version": 1,
   "isRoot": true,
   "tools": {
-    "fantomas": {
-      "version": "6.3.16",
+    "easybuild.changeloggen": {
+      "version": "4.0.0",
       "commands": [
-        "fantomas"
-      ],
-      "rollForward": false
-    },
-    "fable": {
-      "version": "4.24.0",
-      "commands": [
-        "fable"
+        "changelog-gen"
       ],
       "rollForward": false
     },
@@ -30,10 +23,10 @@
       ],
       "rollForward": false
     },
-    "easybuild.changeloggen": {
-      "version": "4.0.0",
+    "fantomas": {
+      "version": "6.3.16",
       "commands": [
-        "changelog-gen"
+        "fantomas"
       ],
       "rollForward": false
     }

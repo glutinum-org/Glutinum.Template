@@ -3,6 +3,10 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
+    <PackageVersion Include="EasyBuild.PackageReleaseNotes.Tasks" Version="2.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageVersion>
     <PackageVersion Include="Fable.Core" Version="4.3.0" />
     <PackageVersion Include="Fable.Package.SDK" Version="1.0.0" />
     <PackageVersion Include="FSharp.Core" Version="5.0.2" />

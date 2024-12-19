@@ -10,6 +10,8 @@ let main args =
 
     let app = CommandApp()
 
+    Command.Run("dotnet", "husky install")
+
     app.Configure(fun config ->
         if RuntimeInformation.IsOSPlatform(OSPlatform.Windows) then
             config.Settings.ApplicationName <- "./build.cmd"

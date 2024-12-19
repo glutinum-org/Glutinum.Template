@@ -6,7 +6,6 @@
 
 [![NuGet](https://img.shields.io/nuget/v/GlueTemplate.svg)](https://www.nuget.org/packages/GlueTemplate)
 
-
 <!-- To learn how to use the template please refer to MANUAL.md -->
 
 <!-- You can put the documentation for your binding below -->

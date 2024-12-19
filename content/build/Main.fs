@@ -22,13 +22,19 @@ let main args =
 
         config
             .AddCommand<DemoCommand>("demo")
-            .WithDescription("Command related to working on the demo project.")
+            .WithDescription("Command related to working on the demo project")
         |> ignore
 
         config
             .AddCommand<ReleaseCommand>("release")
             .WithDescription(
-                "Package a new version of the library and publish it to NuGet. This also updates the demo."
+                """Package a new version of the library and publish it to NuGet. This also updates the demo
+
+You can pass additional arguments to EasyBuild.ChangelogGen tool by appending them after `--`.
+For example:
+    ./build.sh release -- --force-version 1.2.3
+
+Run `dotnet changelog-gen --help` for more information"""
             )
         |> ignore
 

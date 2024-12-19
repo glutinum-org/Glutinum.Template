@@ -11,37 +11,29 @@
           "FSharp.Core": "4.2.3"
         }
       },
-      "EasyBuild.CommitParser": {
-        "type": "Direct",
-        "requested": "[1.0.0, )",
-        "resolved": "1.0.0",
-        "contentHash": "PSsqV5/9YXJUBNRtc+H6NgZ68UrRFAuKpUUFP41eg0YI7z//NGbwAz7D6kI4mlzY1Xd6JD2brb3gzlyR4qFuMA==",
-        "dependencies": {
-          "FSharp.Core": "8.0.101",
-          "FsToolkit.ErrorHandling": "4.15.1",
-          "Thoth.Json.Newtonsoft": "0.1.0"
-        }
-      },
       "EasyBuild.FileSystemProvider": {
         "type": "Direct",
         "requested": "[0.3.0, )",
         "resolved": "0.3.0",
         "contentHash": "gdVJpqcMDJm4IfmITy3MtpEn/lo9pH8PirVlENtXGX9Sdw3rCgoo9ch1TAthUseh28RcUGWwza9BmEWlrQX/Aw=="
       },
+      "EasyBuild.Tools": {
+        "type": "Direct",
+        "requested": "[3.3.0-alpha.1, )",
+        "resolved": "3.3.0-alpha.1",
+        "contentHash": "t8CB8eXVfT8BOf9eZv2kOBea4iy4Cf9VdEYa73S+tYEGpV9Wc4ia8syNJYZSQkT6p2Mor4T0q4SJ1m+jL3ubSA==",
+        "dependencies": {
+          "BlackFox.CommandLine": "1.0.0",
+          "FSharp.Core": "6.0.0",
+          "SimpleExec": "12.0.0",
+          "System.Text.Json": "9.0.0"
+        }
+      },
       "FSharp.Core": {
         "type": "Direct",
         "requested": "[8.0.200, )",
         "resolved": "8.0.200",
-        "contentHash": "U016Y0NhtIEQvbmxf6Sff9lx7PTSGEFctA/kLrJr9MvNfKwjrzlK/4C2V1StgsapegWeGYW6K8Zd/D6vc9C4Yw=="
-      },
-      "LibGit2Sharp": {
-        "type": "Direct",
-        "requested": "[0.30.0, )",
-        "resolved": "0.30.0",
-        "contentHash": "1cBg/7nz6q+yzvComhqQaTS4nbXloLp/x29ZgY/Rr82ohpkuaWT8ZYzsPLFvs1zmCh/4xQbVt5sQxazGblgRig==",
-        "dependencies": {
-          "LibGit2Sharp.NativeBinaries": "[2.0.322]"
-        }
+        "contentHash": "qnxoF3Fu0HzfOeYdrwmQOsLP1v+OtOMSIYkNVUwf6nGqWzL03Hh4r6VFCvCb54jlsgtt3WADVYkKkrgdeY5kiQ=="
       },
       "Semver": {
         "type": "Direct",
@@ -64,29 +56,6 @@
           "Spectre.Console": "0.48.0"
         }
       },
-      "Fable.Core": {
-        "type": "Transitive",
-        "resolved": "4.1.0",
-        "contentHash": "NISAbAVGEcvH2s+vHLSOCzh98xMYx4aIadWacQdWPcQLploxpSQXLEe9SeszUBhbHa73KMiKREsH4/W3q4A4iA=="
-      },
-      "FsToolkit.ErrorHandling": {
-        "type": "Transitive",
-        "resolved": "4.15.1",
-        "contentHash": "zf8o4N954UWhkVQd2tc1u65sjSxZJ8WGprZJcfh1Hmp4OfXcTEnKX0DjMY2yET+BzvsLKembgGq9HBChFYeTlQ==",
-        "dependencies": {
-          "FSharp.Core": "7.0.300"
-        }
-      },
-      "LibGit2Sharp.NativeBinaries": {
-        "type": "Transitive",
-        "resolved": "2.0.322",
-        "contentHash": "EWQaEevzc8uS1ZGS6T83jqUPBY//2WUSCHwbZHBoHOjlfSehqr30nm/VAhJPzjam/69sv7nlLKVcho9t2XuR/Q=="
-      },
-      "Newtonsoft.Json": {
-        "type": "Transitive",
-        "resolved": "13.0.1",
-        "contentHash": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A=="
-      },
       "Spectre.Console": {
         "type": "Transitive",
         "resolved": "0.48.0",
@@ -95,29 +64,28 @@
           "System.Memory": "4.5.5"
         }
       },
+      "System.IO.Pipelines": {
+        "type": "Transitive",
+        "resolved": "9.0.0",
+        "contentHash": "eA3cinogwaNB4jdjQHOP3Z3EuyiDII7MT35jgtnsA4vkn0LUrrSHsU0nzHTzFzmaFYeKV7MYyMxOocFzsBHpTw=="
+      },
       "System.Memory": {
         "type": "Transitive",
         "resolved": "4.5.5",
         "contentHash": "XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw=="
       },
-      "Thoth.Json.Core": {
+      "System.Text.Encodings.Web": {
         "type": "Transitive",
-        "resolved": "0.1.0",
-        "contentHash": "hIo4bdnbG2BOmCrUTHhScgn0aTnlGPQtmO0KiCklSHduEQV3r7SjwscvjjcbfXyc0nuPV6UOg05KHMUgiIeXjQ==",
-        "dependencies": {
-          "FSharp.Core": "5.0.0",
-          "Fable.Core": "4.1.0"
-        }
+        "resolved": "9.0.0",
+        "contentHash": "e2hMgAErLbKyUUwt18qSBf9T5Y+SFAL3ZedM8fLupkVj8Rj2PZ9oxQ37XX2LF8fTO1wNIxvKpihD7Of7D/NxZw=="
       },
-      "Thoth.Json.Newtonsoft": {
+      "System.Text.Json": {
         "type": "Transitive",
-        "resolved": "0.1.0",
-        "contentHash": "i64dDASv8UY8oPNwvcF7UTLvXYL2C3PaTeNQ8s8Woy/pNTKud616//+0V858wcS2PyunVnyQeuiND4bfvMujhQ==",
+        "resolved": "9.0.0",
+        "contentHash": "js7+qAu/9mQvnhA4EfGMZNEzXtJCDxgkgj8ohuxq/Qxv+R56G+ljefhiJHOxTNiw54q8vmABCWUwkMulNdlZ4A==",
         "dependencies": {
-          "FSharp.Core": "5.0.0",
-          "Fable.Core": "4.1.0",
-          "Newtonsoft.Json": "13.0.1",
-          "Thoth.Json.Core": "0.1.0"
+          "System.IO.Pipelines": "9.0.0",
+          "System.Text.Encodings.Web": "9.0.0"
         }
       }
     }

@@ -3,7 +3,8 @@ module EasyBuild.Commands.Demo
 open Spectre.Console.Cli
 open SimpleExec
 open EasyBuild.Workspace
-open BlackFox.CommandLine
+open EasyBuild.Tools.Fable
+open EasyBuild.Tools.Vite
 
 type DemoSettings() =
     inherit CommandSettings()
@@ -22,34 +23,17 @@ type DemoCommand() =
         if settings.IsWatch then
             Async.Parallel
                 [
-                    Command.RunAsync(
-                        "dotnet",
-                        CmdLine.empty
-                        |> CmdLine.appendRaw "fable"
-                        |> CmdLine.appendRaw "watch"
-                        |> CmdLine.appendRaw Workspace.demo.``.``
-                        |> CmdLine.appendRaw "--test:MSBuildCracker"
-                        |> CmdLine.appendRaw "--verbose"
-                        |> CmdLine.toString
-                    )
+                    Fable.watch (projFileOrDir = Workspace.demo.``.``, verbose = true)
                     |> Async.AwaitTask
 
-                    Command.RunAsync("npx", "vite", workingDirectory = Workspace.demo.``.``)
-                    |> Async.AwaitTask
+                    Vite.watch (workingDirectory = Workspace.demo.``.``) |> Async.AwaitTask
                 ]
             |> Async.RunSynchronously
             |> ignore
 
         else
-            Command.Run(
-                "dotnet",
-                CmdLine.empty
-                |> CmdLine.appendRaw "fable"
-                |> CmdLine.appendRaw Workspace.demo.``.``
-                |> CmdLine.appendRaw "--test:MSBuildCracker"
-                |> CmdLine.toString
-            )
 
-            Command.Run("npx", "vite build", workingDirectory = Workspace.demo.``.``)
+            Fable.build (projFileOrDir = Workspace.demo.``.``)
+            Vite.build (workingDirectory = Workspace.demo.``.``)
 
         0

@@ -38,8 +38,13 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
     <ItemGroup>
-        <None Include="$(MSBuildThisFileDirectory)/LICENSE.txt" Pack="true"
-            PackagePath="$(PackageLicenseFile)" />
+        <None Include="$(MSBuildThisFileDirectory)/LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)" />
         <None Include="$(MSBuildThisFileDirectory)\README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="EasyBuild.PackageReleaseNotes.Tasks" Version="2.0.0">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
     </ItemGroup>
 </Project>
