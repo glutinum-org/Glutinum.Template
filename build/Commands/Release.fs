@@ -24,10 +24,10 @@ type ReleaseCommand() =
         let nupkgPath =
             DotNet.pack (projectFile = FileInfo Workspace.``Glutinum.Template.proj``)
 
-        // DotNet.nugetPush nupkgPath
+        DotNet.nugetPush nupkgPath
 
-        // Git.addAll ()
-        // Git.commitRelease newVersion
-        // Git.push ()
+        Git.addAll ()
+        Git.commitRelease newVersion
+        Git.push ()
 
         0

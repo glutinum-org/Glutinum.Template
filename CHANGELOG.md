@@ -7,8 +7,16 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 <!-- Don't add your changes manually, it will be done based on your Git history when making a release -->
 
 <!-- EasyBuild: START -->
-<!-- last_commit_released: 93a77c9355923a64296770573ee93940ea14d1d5 -->
+<!-- last_commit_released: cd00a74431cf988b647aa4f25d208550dd4a01a3 -->
 <!-- EasyBuild: END -->
+
+## 1.1.0 - 2024-12-19
+
+### 🚀 Features
+
+* Update template to use the latest tooling from EasyBuild ecosystem ([cd00a74](https://github.com/glutinum-org/Glutinum.Template/commit/cd00a74431cf988b647aa4f25d208550dd4a01a3))
+
+<strong><small>[View changes on Github](https://github.com/glutinum-org/Glutinum.Template/compare/93a77c9355923a64296770573ee93940ea14d1d5..cd00a74431cf988b647aa4f25d208550dd4a01a3)</small></strong>
 
 ## 1.0.0
 
