@@ -32,3 +32,5 @@ Then you can create a new project with:
 ```bash
 dotnet new glutinum -n MyProject
 ```
+
+Once installed, you can refer to the [`MANUAL.md`](content/MANUAL.md) file in the generated project for more information.
