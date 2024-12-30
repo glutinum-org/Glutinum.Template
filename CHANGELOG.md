@@ -7,8 +7,16 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 <!-- Don't add your changes manually, it will be done based on your Git history when making a release -->
 
 <!-- EasyBuild: START -->
-<!-- last_commit_released: cd00a74431cf988b647aa4f25d208550dd4a01a3 -->
+<!-- last_commit_released: 0ee488e45c8c3ef5779555a7409f042301c582d0 -->
 <!-- EasyBuild: END -->
+
+## 1.1.1 - 2024-12-30
+
+### 🐞 Bug Fixes
+
+* Fix casing of the `content` folder to work on case sensitive file system ([0ee488e](https://github.com/glutinum-org/Glutinum.Template/commit/0ee488e45c8c3ef5779555a7409f042301c582d0))
+
+<strong><small>[View changes on Github](https://github.com/glutinum-org/Glutinum.Template/compare/cd00a74431cf988b647aa4f25d208550dd4a01a3..0ee488e45c8c3ef5779555a7409f042301c582d0)</small></strong>
 
 ## 1.1.0 - 2024-12-19
 
