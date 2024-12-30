@@ -21,17 +21,17 @@
     </PropertyGroup>
     <PropertyGroup>
         <ExcludeFromPackage>
-            Content/**/fable_modules/**;
-            Content/**/*.fs.js;
-            Content/**/*.fs.js.map;
-            Content/**/node_modules/**;
-            Content/**/obj/**;
-            Content/**/bin/**;
-            Content/**/dist/**;
+            content/**/fable_modules/**;
+            content/**/*.fs.js;
+            content/**/*.fs.js.map;
+            content/**/node_modules/**;
+            content/**/obj/**;
+            content/**/bin/**;
+            content/**/dist/**;
         </ExcludeFromPackage>
     </PropertyGroup>
     <ItemGroup>
-        <Content Include="Content/**/*.*" Exclude="$(ExcludeFromPackage)" />
+        <Content Include="content/**/*.*" Exclude="$(ExcludeFromPackage)" />
     </ItemGroup>
     <PropertyGroup>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
